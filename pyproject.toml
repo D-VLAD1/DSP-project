@@ -1,18 +1,26 @@
 [project]
 name = "dsp-project"
 version = "0.1.0"
-description = "Add your description here"
+description = "Classificator of healthy and not healthy sound 'A'."
 readme = "README.md"
 authors = [
     { name = "Vlad Danylyshyn", email = "vladuslavsd@gmail.com" }
 ]
 requires-python = ">=3.14"
 dependencies = [
+    "ipykernel>=7.4.0",
+    "matplotlib>=3.11.2",
     "numpy>=2.5.4",
+    "pandas>=3.0.6",
+    "scikit-learn>=1.9.1",
+    "sounddevice>=0.5.6",
 ]
 
 [project.scripts]
-dsp-project = "dsp_project:main"
+dsp-project = "run_model:main"
+
+[tool.uv.build-backend]
+module-name = "run_model"
 
 [build-system]
 requires = ["uv_build>=0.12.18,<0.13.0"]
